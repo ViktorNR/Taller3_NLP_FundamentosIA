@@ -27,6 +27,7 @@ from tqdm import tqdm
 from sentence_transformers import SentenceTransformer
 import nltk
 from nltk.tokenize import word_tokenize
+nltk.download('punkt_tab')
 from collections import Counter
 
 
@@ -186,7 +187,7 @@ def ensure_nltk():
 
 def main():
     parser = argparse.ArgumentParser(description='Pipeline de features por usuario')
-    parser.add_argument('--input', type=str, default='data/comments_clean.csv')
+    parser.add_argument('--input', type=str, default='data/cleaned_comments.csv')
     parser.add_argument('--output', type=str, default='data/user_features.csv')
     parser.add_argument('--model', type=str, default='all-MiniLM-L6-v2')
     args = parser.parse_args()
